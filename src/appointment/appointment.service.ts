@@ -11,7 +11,7 @@ const enum Status {
 
 @Injectable()
 export class AppointmentService {
-  constructor(private readonly databaseService: DatabaseService) { }
+  constructor(private readonly databaseService: DatabaseService) {}
 
   create(createAppointmentDto: CreateAppointmentDto) {
     createAppointmentDto.status = Status.PENDING;
@@ -32,7 +32,7 @@ export class AppointmentService {
   }
 
   update(id: number, updateAppointmentDto: UpdateAppointmentDto) {
-    return `This action updates a #${id} appointment`;
+    return `This action updates a #${id} appointment: ${updateAppointmentDto}`;
   }
 
   remove(id: number) {

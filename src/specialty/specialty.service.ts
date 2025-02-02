@@ -5,7 +5,7 @@ import { DatabaseService } from 'src/database/database.service';
 
 @Injectable()
 export class SpecialtyService {
-  constructor(private readonly prisma: DatabaseService) { }
+  constructor(private readonly prisma: DatabaseService) {}
 
   create(createSpecialtyDto: CreateSpecialtyDto) {
     return this.prisma.specialty.create({ data: createSpecialtyDto });
@@ -20,7 +20,10 @@ export class SpecialtyService {
   }
 
   update(id: number, updateSpecialtyDto: UpdateSpecialtyDto) {
-    return this.prisma.specialty.update({ where: { id }, data: updateSpecialtyDto });
+    return this.prisma.specialty.update({
+      where: { id },
+      data: updateSpecialtyDto,
+    });
   }
 
   remove(id: number) {

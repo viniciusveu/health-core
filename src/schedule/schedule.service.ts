@@ -8,12 +8,14 @@ export class ScheduleService {
   constructor(private readonly databaseService: DatabaseService) {}
 
   create(createScheduleDto: CreateScheduleDto) {
-    return this.databaseService.schedule.create({ data: {
-      date: createScheduleDto.date,
-      time_slot: createScheduleDto.time_slot,
-      status: createScheduleDto.status,
-      Physician: { connect: { id: createScheduleDto.phisician_id } }
-    } });
+    return this.databaseService.schedule.create({
+      data: {
+        date: createScheduleDto.date,
+        time_slot: createScheduleDto.time_slot,
+        status: createScheduleDto.status,
+        Physician: { connect: { id: createScheduleDto.phisician_id } },
+      },
+    });
   }
 
   findAll() {
@@ -25,7 +27,7 @@ export class ScheduleService {
   }
 
   update(id: number, updateScheduleDto: UpdateScheduleDto) {
-    return `This action updates a #${id} schedule`;
+    return `This action updates a #${id} schedule: ${updateScheduleDto}`;
   }
 
   remove(id: number) {

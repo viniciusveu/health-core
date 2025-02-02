@@ -5,7 +5,7 @@ import { DatabaseService } from '../database/database.service';
 
 @Injectable()
 export class PatientService {
-  constructor(private readonly prisma: DatabaseService) { }
+  constructor(private readonly prisma: DatabaseService) {}
 
   create(createPatientDto: CreatePatientDto) {
     return this.prisma.patient.create({ data: createPatientDto });
@@ -20,10 +20,16 @@ export class PatientService {
   }
 
   update(id: number, updatePatientDto: UpdatePatientDto) {
-    return this.prisma.patient.update({ where: { id }, data: updatePatientDto });
+    return this.prisma.patient.update({
+      where: { id },
+      data: updatePatientDto,
+    });
   }
 
   remove(id: number) {
-    return this.prisma.patient.update({ where: { id }, data: { is_active: false } });
+    return this.prisma.patient.update({
+      where: { id },
+      data: { is_active: false },
+    });
   }
 }

@@ -10,12 +10,12 @@ import { AppointmentModule } from './appointment/appointment.module';
 
 @Module({
   imports: [
-    PatientModule, 
-    DatabaseModule, 
-    PhysicianModule, 
-    SpecialtyModule, 
-    ScheduleModule, 
-    AppointmentModule
+    PatientModule,
+    DatabaseModule,
+    PhysicianModule,
+    SpecialtyModule,
+    ScheduleModule,
+    AppointmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

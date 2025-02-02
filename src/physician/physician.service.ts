@@ -5,8 +5,7 @@ import { DatabaseService } from '../database/database.service';
 
 @Injectable()
 export class PhysicianService {
-
-  constructor(private readonly prisma: DatabaseService) { }
+  constructor(private readonly prisma: DatabaseService) {}
 
   create(createPhysicianDto: CreatePhysicianDto) {
     return this.prisma.physician.create({ data: createPhysicianDto });
@@ -21,7 +20,10 @@ export class PhysicianService {
   }
 
   update(id: number, updatePhysicianDto: UpdatePhysicianDto) {
-    return this.prisma.physician.update({ where: { id }, data: updatePhysicianDto });
+    return this.prisma.physician.update({
+      where: { id },
+      data: updatePhysicianDto,
+    });
   }
 
   remove(id: number) {
@@ -29,16 +31,18 @@ export class PhysicianService {
   }
 
   getSpecialties(id: number) {
-    return this.prisma.physician_Specialty.findMany({ where: { physician_id: id }, include: { Physician: true, Specialty: true } });
+    return this.prisma.physician_Specialty.findMany({
+      where: { physician_id: id },
+      include: { Physician: true, Specialty: true },
+    });
   }
 
   addSpecialty(id: number, specialtyId: number) {
     return this.prisma.physician_Specialty.create({
-      data:
-      {
+      data: {
         physician_id: id,
-        specialty_id: specialtyId
-      }
+        specialty_id: specialtyId,
+      },
     });
   }
 }

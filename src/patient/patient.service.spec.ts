@@ -14,7 +14,7 @@ describe('PatientService', () => {
         {
           provide: DatabaseService,
           useValue: { patient: { create: jest.fn() } },
-        }
+        },
       ],
     }).compile();
 
