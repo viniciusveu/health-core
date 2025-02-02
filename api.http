@@ -1,0 +1,136 @@
+###
+
+POST http://localhost:3000/patients
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "national_id": "123456789",
+    "phone": "123456789",
+    "email": "teste",
+    "birthdate": "2021-10-10T00:00:00.000Z",
+    "gender": "M",
+    "address": "Rua 1",
+    "is_active": true,
+    "is_subscribed": true
+}
+
+###
+
+GET http://localhost:3000/patients
+
+###
+
+GET http://localhost:3000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
+
+###
+
+PUT http://localhost:3000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "national_id": "123456789",
+    "phone": "123456789",
+    "email": "teste",
+    "birthdate": "2021-10-10T00:00:00.000Z",
+}
+
+### 
+
+GET http://localhost:3000/physicians
+
+###
+
+POST http://localhost:3000/physicians
+Content-Type: application/json
+
+{
+    "name": "Dr. John Doe",
+    "phone": "123456789",
+    "email": "teste",
+    "crm": "123456789",
+    "status": "ATIVO"
+}
+
+###
+
+DELETE http://localhost:3000/physicians/340bfa01-c98d-4bdc-9bd8-8c5288725bc8
+
+###
+
+GET http://localhost:3000/specialties
+
+###
+
+POST http://localhost:3000/specialties
+Content-Type: application/json
+
+{
+    "name": "Ortopedia",
+    "category": "Médico",
+    "is_main": true,
+    "description": "Especialidade médica que se ocupa do diagnóstico e tratamento das doenças que acometem o coração bem como os outros componentes do sistema circulatório."
+}
+
+###
+
+GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
+
+###
+
+POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
+Content-Type: application/json
+
+{
+    "specialty_id": "e55b664c-d3cd-4000-ad18-3b1d01081c79"
+}
+
+###
+
+DELETE http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties/e55b664c-d3cd-4000-ad18-3b1d01081c79
+
+### 
+
+GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
+
+###
+
+GET http://localhost:3000/agendas/1
+
+###
+
+POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
+
+Content-Type: application/json
+
+{
+    "date": "2021-10-10T00:00:00.000Z",
+    "start_time": "08:00",
+    "end_time": "09:00"
+}
+
+### 
+
+DELETE http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda/1
+
+###
+
+GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
+
+###
+
+POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
+
+Content-Type: application/json
+
+{
+    "patient_id": "edbaed33-1bb4-4321-8408-bc8b51e1058a",
+    "date": "2021-10-10T00:00:00.000Z",
+    "start_time": "08:00",
+    "end_time": "09:00"
+}
+
+###
+
+GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
