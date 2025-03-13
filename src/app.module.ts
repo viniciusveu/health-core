@@ -7,6 +7,7 @@ import { PhysicianModule } from './physician/physician.module';
 import { SpecialtyModule } from './specialty/specialty.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AppointmentModule } from './appointment/appointment.module';
+import { AmbulanceModule } from './ambulance/ambulance.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AppointmentModule } from './appointment/appointment.module';
     SpecialtyModule,
     ScheduleModule,
     AppointmentModule,
+    AmbulanceModule,
   ],
   controllers: [AppController],
   providers: [AppService],

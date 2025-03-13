@@ -49,7 +49,7 @@ Content-Type: application/json
     "name": "Dr. John Doe",
     "phone": "123456789",
     "email": "teste",
-    "crm": "123456789",
+    "crm": "1234526789",
     "status": "ATIVO"
 }
 
@@ -133,4 +133,36 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
+POST http://localhost:3000/ambulances
+Content-Type: application/json
+
+{   
+    "data": {
+        "plate_number": "TST123",
+        "status": "LIVRE"
+    }
+}
+
+###
+
+GET http://localhost:3000/ambulances
+
+
+###
+
+
+POST http://localhost:3000/appointments
+Content-Type: application/json
+
+{
+    "patient_id": 1,
+    "physician_id": 1,
+    "ambulance_id": 1,
+    "date_time": "Date Sat Mar 01 2025 16:20:15 GMT-0300 (Horário Padrão de Brasília)",
+    "reason": "teste",
+    "status": "Agendado"
+}
+
+###
+
+GET http://localhost:3000/appointments
