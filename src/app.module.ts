@@ -8,9 +8,13 @@ import { SpecialtyModule } from './specialty/specialty.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AppointmentModule } from './appointment/appointment.module';
 import { AmbulanceModule } from './ambulance/ambulance.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     PatientModule,
     DatabaseModule,
     PhysicianModule,

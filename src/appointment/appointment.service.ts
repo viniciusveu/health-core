@@ -16,16 +16,16 @@ export class AppointmentService {
   constructor(private readonly databaseService: DatabaseService) { }
 
   async create(createAppointmentDto: CreateAppointmentDto) {
-    createAppointmentDto.status = AppointmentStatus.PENDING;
-    const appointmentCreated = await this.databaseService.appointment.create({
-      data: {
-        ...createAppointmentDto,
-        date_time: new Date(createAppointmentDto.date_time), // Converte string para Date
-      },
-    });
+    const appointment = {
+      patient_id: createAppointmentDto.patient_id,
+      physician_id: createAppointmentDto.physician_id,
+      ambulance_id: createAppointmentDto.ambulance_id,
+      date_time: new Date(createAppointmentDto.date_time).toISOString(),
+      reason: createAppointmentDto.reason,
+      status: AppointmentStatus.PENDING,
+    };
 
-    console.log({ createAppointmentDto });
-
+    const appointmentCreated = await this.databaseService.appointment.create({ data: appointment});
 
     await fetch('http://localhost:3001/', {
       method: 'POST',
