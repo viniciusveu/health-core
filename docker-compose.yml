@@ -5,9 +5,9 @@ services:
     environment:
       POSTGRES_USER: your_user
       POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: your_database
+      POSTGRES_DB: health_core
     ports:
-      - '5432:5432'
+      - '5433:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -18,13 +18,10 @@ services:
     container_name: nestjs_app
     volumes:
       - .:/app
-      - /app/node_modules
-    environment:
-      DATABASE_URL: 'postgresql://your_user:your_password@postgres:5432/your_database'
     depends_on:
       - postgres
     ports:
-      - '3000:3000'
+      - '8000:8000'
     networks:
       - app_network
 
