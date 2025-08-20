@@ -1,6 +1,6 @@
 ###
 
-POST http://localhost:3000/patients
+POST http://localhost:8000/patients
 Content-Type: application/json
 
 {
@@ -17,15 +17,15 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/patients
+GET http://172.17.0.1:8000/patients
 
 ###
 
-GET http://localhost:3000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
+GET http://localhost:8000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
 
 ###
 
-PUT http://localhost:3000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
+PUT http://localhost:8000/patients/edbaed33-1bb4-4321-8408-bc8b51e1058a
 Content-Type: application/json
 
 {
@@ -38,11 +38,11 @@ Content-Type: application/json
 
 ### 
 
-GET http://localhost:3000/physicians
+GET http://localhost:8000/physicians
 
 ###
 
-POST http://localhost:3000/physicians
+POST http://localhost:8000/physicians
 Content-Type: application/json
 
 {
@@ -55,15 +55,15 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/physicians/340bfa01-c98d-4bdc-9bd8-8c5288725bc8
+DELETE http://localhost:8000/physicians/340bfa01-c98d-4bdc-9bd8-8c5288725bc8
 
 ###
 
-GET http://localhost:3000/specialties
+GET http://localhost:8000/specialties
 
 ###
 
-POST http://localhost:3000/specialties
+POST http://localhost:8000/specialties
 Content-Type: application/json
 
 {
@@ -75,11 +75,11 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
+GET http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
 
 ###
 
-POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
+POST http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties
 Content-Type: application/json
 
 {
@@ -88,19 +88,19 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties/e55b664c-d3cd-4000-ad18-3b1d01081c79
+DELETE http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/specialties/e55b664c-d3cd-4000-ad18-3b1d01081c79
 
 ### 
 
-GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
+GET http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
 
 ###
 
-GET http://localhost:3000/agendas/1
+GET http://localhost:8000/agendas/1
 
 ###
 
-POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
+POST http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda
 
 Content-Type: application/json
 
@@ -112,15 +112,15 @@ Content-Type: application/json
 
 ### 
 
-DELETE http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda/1
+DELETE http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/agenda/1
 
 ###
 
-GET http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
+GET http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
 
 ###
 
-POST http://localhost:3000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
+POST http://localhost:8000/physicians/36c2347e-7fd5-4c8b-b533-22108ba2c5c9/appointments
 
 Content-Type: application/json
 
@@ -133,7 +133,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/ambulances
+POST http://localhost:8000/ambulances
 Content-Type: application/json
 
 {   
@@ -145,13 +145,13 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/ambulances
+GET http://localhost:8000/ambulances
 
 
 ###
 
 
-POST http://localhost:3000/appointments
+POST http://localhost:8000/appointments
 Content-Type: application/json
 
 {
@@ -165,4 +165,4 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/appointments
+GET http://localhost:8000/appointments
